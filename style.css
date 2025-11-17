@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+header {
+    background: #000;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Estilo do container de navegação */
+nav {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o menu no desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Estilo do ícone de hambúrguer */
+.hamburger {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* Lista de navegação */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os itens */
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: #ff9500;
+    color: #000;
+}
+
+
+/* Estilo do menu no mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu-container {
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: none; /* Menu oculto por padrão */
+        flex-direction: column; /* Itens em coluna */
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul.show {
+        display: flex; /* Mostra o menu ao ativar */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+section h2 {
+    border-bottom: 2px solid #ff9500;
+    padding-bottom: 5px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.highlight {
+    color: #ff9500;
+}
+
+img {
+    max-width: 100%; /* Garante que as imagens não excedam a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Borda arredondada para suavizar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
+    margin: 20px 0; /* Espaçamento ao redor da imagem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeitos de transição */
+}
+
+/* Efeito ao passar o mouse */
+img:hover {
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a intensidade da sombra */
+}
+
+/* Layout responsivo para imagens em seções */
+.img-container {
+    display: flex;
+    flex-wrap: wrap; /* Garante que as imagens se reorganizem em dispositivos móveis */
+    gap: 20px; /* Espaçamento entre as imagens */
+    justify-content: center; /* Centraliza as imagens */
+}
+
+.img-container img {
+    width: calc(50% - 10px); /* Ajusta as imagens para ficarem lado a lado */
+}
+
+@media (max-width: 768px) {
+    .img-container img {
+        width: 100%; /* Em telas pequenas, as imagens ocupam 100% da largura */
+    }
+}
